@@ -1,0 +1,111 @@
+AI-Powered Sustainable Recipe Recommender
+
+Concept:
+
+Develop a web application that recommends recipes to users based on their preferences and dietary needs, while also considering the environmental impact of the ingredients.
+
+Technologies:
+
+Web:
+Front-end framework like React or Vue.js for a user-friendly interface.
+Back-end framework like Node.js or Python with Flask/Django for handling user interactions and API calls.
+Cloud:
+Cloud platform like Google Cloud Platform (GCP) or Amazon Web Services (AWS) for hosting the web application and the AI model. Free tiers are available for beginners.
+AI:
+Machine Learning model trained on a dataset of recipes, ingredients, and their associated environmental footprint (e.g., carbon footprint, water usage).
+Natural Language Processing (NLP) to understand user preferences and dietary restrictions from text input.
+------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+AI-Powered Lost and Found Platform:
+Concept: Create a web application and mobile app that utilizes image recognition and location services to help users find lost items and connect them with finders.
+Technologies:
+Web and Mobile app development frameworks.
+Cloud: Platform for image storage, retrieval and AI processing.
+AI: Image recognition model to identify lost items from user-uploaded photos.
+Uniqueness: Leverages AI to streamline the lost and found process for greater efficiency and success in reuniting people with their belongings.
+Example Functionalities:
+Users upload a photo and description of their lost item.
+The image recognition model identifies the item type in the photo.
+Users report the location where the item was lost.
+The application creates a lost item listing with details and location.
+Finders can upload photos of items they've found, allowing for
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Unique Real World Problems
+----------------------------
+Inspiration
+from our society and administration
+
+What it does
+It recognizes different faces and compare them into our criminal database
+
+How we built it
+We built it using Flask, ReactJS OpenCv
+
+Challenges we ran into
+Accomplishments that we're proud of
+What we learned
+What's next for Criminal Recognition
+Built With
+flask
+node.js
+python
+react
+whatsapp-web.js
+------------------------------------------------------------------------------------------------------------------------------------------
+Inspiration
+In the face of the devastating rise in climate-induced disasters, Kartavya is more than just a project—it's a heartfelt response to a world in desperate need of compassion and support. Picture the fear and vulnerability of being caught in a disaster, desperately seeking aid, not knowing where to turn. Kartavya was born from the pain of witnessing this helplessness and the burning desire to make a difference
+What it does
+The platform's core functions include disaster preparedness, early warning systems, and climate resilience strategies.
+How we built it
+MongoDB, Expressjs, Nodejs, Reactjs
+Tailwind CSS, JSX
+Challenges we ran into
+Coming up with the ideas, finally came up with it just a night before.
+It was challenging for us to use Auth0 and geolocation API for the first time.
+We were about to use generative AI, and open AI APIs but due to the Quota limit, we just built a static model of it.
+Accomplishments that we're proud of
+Making this whole project work well.
+Successfully implemented both Auth0 and Geolocator.
+Sending mails using Mailtrap.
+What we learned
+Teamwork
+Nodemailer and Auth0
+Live updates on site and, Postman
+What's next for Kartavya
+Use of authorized APIs of government sites.
+Integrating AI chatbot for better reach.
+------------------------------------------------------------------------------------------------------------------------------------------
+E Waste Facility Locator
+Overview
+E Waste Facility Locator is a software solution designed to address the challenges in the unorganized e-waste disposal sector. It provides users with a convenient and organized way to dispose of electronic waste while promoting responsible recycling and environmental awareness.
+
+Key Features
+Location-Based Facility Search: Users can find the nearest e-waste disposal facilities upon login.
+
+Detailed Product Information: Users input information about the electronic products they wish to dispose of, including quantity, purchase date, and product details.
+
+Expected Price: Users can specify their expected price for the e-waste.
+
+Bidding System: E-waste facilities bid for user requests, ensuring competitive pricing.
+
+Payment Handling: The system manages payments, with a percentage retained for operational costs.
+
+Subscription Model: E-waste facilities subscribe to the service, providing a revenue stream for operational expenses.
+
+Transportation Monitoring: Employees and volunteers monitor e-waste transportation for secure and responsible handling.
+
+Student Volunteer Program: School and college students can volunteer to monitor transportation, promoting environmental awareness and social responsibility.
+
+Integration with Pawnshops: Pawnshop owners can use the software to ensure proper handling of e-waste, directing it to authorized facilities.
+
+User Recognition System: Regular users earn credit points, leading to government-recognized certificates and exciting discounts and coupons.
+
+Job Creation: The software creates employment opportunities in loading, unloading, transportation, and software development.
+
+Diverse Customer Base: Catering to big corporations, mid-cap clients, and individuals, offering a comprehensive solution for all.
+
+Environmental Impact
+Our project is dedicated to improving the environment by promoting responsible e-waste disposal and recycling. It aims to organize the e-waste sector for the betterment of all.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Lawyer appointment booking app.
+-----------------------------------------------------------------------------------------------------------------------------------------
