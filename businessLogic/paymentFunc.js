@@ -6,17 +6,26 @@ import nodemailer from "nodemailer";
 const handlePrePayment = async (req, res) => {
     try{
        
-        let a = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,paymentstatus:"Pending"});
-        let b = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,paymentstatus:"Paid"});
+      let a = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,paymentstatus:"pending",teststatus:"pending"});
+      let b = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,teststatus:"completed",paymentstatus:"pending"});
+      let c = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,teststatus:"completed",paymentstatus:"paid"});
         if(a!=null){
-            let order = {
-                id:a.orderid,
-                amount:a.amount*100
-            }
-            return res.status(200).json({order,success:true ,message:"Intern Registered successfully . Please make the payment to continue"});
+            // let order = {
+            //     id:a.orderid,
+            //     amount:a.amount*100
+            // }
+            let data = await InternUser.populate(a,{path:"Regdomain"});
+            return res.status(200).json({success:false ,message:"Intern Already Registered. Please give the test to continue",data,status:"test"});
         }
         else if(b!=null){
-            return res.status(200).json({success:false,message:"You have already registered for this Internship"});
+            let order = {
+                orderid:b.orderid,
+                id:b._id,
+            }
+            return res.status(200).json({success:false,message:"You have already completed the test. Please make the payment to continue",data:order,status:"payment"});
+        }
+        else if(c!=null){
+          return res.status(200).json({success:false,message:"You have already completed the test and made the payment. You have been Registered Successfully ",status:"registered"});
         }
     let rand=Math.floor(Math.random()*10000000);
     let internid = Math.floor(Math.random()*1000000)+"DIO";
@@ -39,14 +48,16 @@ const handlePrePayment = async (req, res) => {
             desc:req.body.desc,
             profile:req.body.profile,
             Regdomain:req.body.Regdomain,
-            status:"Pending",
+            status:"pending",
             internid:internid,
             amount:indata.price,
             orderid:order.id,
-            paymentstatus:"Pending",
+            paymentstatus:"pending",
+            teststatus:"pending"
         });
         await data.save();
-        res.status(200).json({order,success:true ,message:"Intern Registered successfully . Please make the payment to continue"});
+        let data1 = await InternUser.populate(data,{path:"Regdomain"});
+        res.status(200).json({data:data1,success:true ,message:"Intern Registered successfully . Please make the payment to continue"});
        
       })}
         
@@ -61,6 +72,7 @@ const handlePrePayment = async (req, res) => {
         res.status(500).json({success:false,message:"SomeThing went wrong"+err.message});
     }
 }
+//post payment starts here 
 const handlePostPayment = async (req, res) => {
     const transporter = await nodemailer.createTransport({
         host: "smtp-relay.brevo.com",

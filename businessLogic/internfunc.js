@@ -1,9 +1,10 @@
 import InternDetails from "../models/InternDetails.js";
+import Test from "../models/Test.js";
 const handleAllInternshipDetails = async (req, res) => {
     console.log('Inside handleAllInternshipDetails');
     try{
         
-     const {title,desc,img,price,skills,seats,duration,grouplink} = req.body;
+     const {title,desc,img,price,skills,seats,duration,grouplink,testid} = req.body;
      const data = new InternDetails({
             title,
             desc,
@@ -12,7 +13,8 @@ const handleAllInternshipDetails = async (req, res) => {
             skills,
             seats,
             duration,
-            grouplink
+            grouplink,
+            testid
         });
         await data.save();
         res.status(200).json({success:true,message:"Internship details saved successfully"});
@@ -24,7 +26,8 @@ const handleAllInternshipDetails = async (req, res) => {
 const FetchAllInternshipDetails = async (req, res) => {
   try{
  let data = await InternDetails.find();
- res.status(200).json({success:true,data:data});
+ let testdata = await Test.find();
+ res.status(200).json({success:true,data:data,testdata:testdata,message:"All Internship details fetched successfully"});
   }
   catch(err){
         res.status(500).json({success:false,message:"SomeThing went wrong"+err.message});

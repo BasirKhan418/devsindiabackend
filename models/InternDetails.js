@@ -8,5 +8,6 @@ img:{type:String,required:true},
 grouplink:{type:String,required:true},
 seats:{type:Number,required:true},
 duration:{type:String,required:true},
+testid:{type:String,required:true},
 },{timestamps:true});
 export default mongoose.model('InternDetails',InternSchema);

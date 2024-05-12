@@ -12,10 +12,17 @@ const InternUserSchema = new mongoose.Schema({
     paymentid:{type:String},
     amount:{type:Number},
     orderid:{type:String},
-    paymentstatus:{type:String},
+    paymentstatus:{type:String,default:'pending'},
     paymentid:{type:String},
     assignMentor:{type:String},
     project:{type:Array},
-    assignMent:{type:Array}
+    assignMent:{type:Array},
+    score:{type:Number,default:0},
+    ispass:{type:String,default:'pending'},
+    teststatus:{type:String,default:'pending'},
+    question1answer:[{type:Object,default:''}],
+    question2answer:[{type:Object,default:''}],
+    question3answer:[{type:Object,default:''}],
+    question4answer:[{type:Object,default:''}],
 },{timestamps:true});
 export default mongoose.model('InternUser',InternUserSchema);
