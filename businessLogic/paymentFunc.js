@@ -8,7 +8,7 @@ const handlePrePayment = async (req, res) => {
        
       let a = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,paymentstatus:"pending",teststatus:"pending"});
       let b = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,teststatus:"completed",paymentstatus:"pending"});
-      let c = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,teststatus:"completed",paymentstatus:"paid"});
+      let c = await InternUser.findOne({email:req.body.email,Regdomain:req.body.Regdomain,teststatus:"completed",paymentstatus:"Paid"});
         if(a!=null){
             // let order = {
             //     id:a.orderid,
@@ -110,7 +110,7 @@ const handlePostPayment = async (req, res) => {
      let b = await InternUser.populate(a,{path:"Regdomain"});
 
  const info = await transporter.sendMail({
-      from: '<support@Devsindia.org.in>', // sender address
+      from: '<Devsindia.account@org.in>', // sender address
       to: `${b.email}`, // list of receivers
       subject: `🎉 Confirmation: Successful Registration & Payment for Summer Internship Program 🚀`, // Subject line
       text: "DevsIndiaOrg", // plain text body
