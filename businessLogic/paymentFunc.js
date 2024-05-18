@@ -27,20 +27,10 @@ const handlePrePayment = async (req, res) => {
         else if(c!=null){
           return res.status(200).json({success:false,message:"You have already completed the test and made the payment. You have been Registered Successfully ",status:"registered"});
         }
-    let rand=Math.floor(Math.random()*10000000);
+   
     let internid = Math.floor(Math.random()*1000000)+"DIO";
-    var instance = new Razorpay({ key_id: `${process.env.RAZORPAY_KEY_ID}`, key_secret: `${process.env.RAZORPAY_KEY_SECRET}` })
-    console.log(req.body);
     let indata = await InternDetails.findOne({_id:req.body.Regdomain});
-    console.log(indata);
-    var options = {
-        amount: (indata.price)*100,  // amount in the smallest currency unit
-        currency: "INR",
-        receipt: `${rand}`
-      };
       try{
-      instance.orders.create(options, async function(err, order) {
-        console.log(order);
         const data = new InternUser({
             name:req.body.name,
             email:req.body.email,
@@ -51,7 +41,6 @@ const handlePrePayment = async (req, res) => {
             status:"pending",
             internid:internid,
             amount:indata.price,
-            orderid:order.id,
             paymentstatus:"pending",
             teststatus:"pending"
         });
@@ -59,7 +48,7 @@ const handlePrePayment = async (req, res) => {
         let data1 = await InternUser.populate(data,{path:"Regdomain"});
         res.status(200).json({data:data1,success:true ,message:"Intern Registered successfully . Please make the payment to continue"});
        
-      })}
+      }
         
       
       catch(err){
@@ -108,7 +97,7 @@ const handlePostPayment = async (req, res) => {
  
      let a  = await InternUser.findOneAndUpdate({orderid:razorpay_order_id},{paymentid:razorpay_payment_id,paymentstatus:"Paid",status:"Registered"});
      let b = await InternUser.populate(a,{path:"Regdomain"});
-
+console.log(b.email);
  const info = await transporter.sendMail({
       from: '<Devsindia.account@org.in>', // sender address
       to: `${b.email}`, // list of receivers
