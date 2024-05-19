@@ -50,7 +50,7 @@ try{
           <tr>
             <td style="text-align: center; color: #666666;">
               <p>This email was sent to ${data.email}. If you believe you received this email in error, please contact us immediately.</p>
-              <p>Attached: Offer Letter Template</p>
+              <p>Attached: Offer Letter </p>
             </td>
           </tr>
         </table>
