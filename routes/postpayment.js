@@ -9,7 +9,7 @@ import nodemailer from "nodemailer";
     if(req.query.type=="check"){
         Cashfree.XClientId = process.env.CASHFREE_API_ID;
         Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY;
-        Cashfree.XEnvironment = Cashfree.Environment.TEST;
+        Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
         console.log(req.query.order_id);
         
         try {
@@ -92,7 +92,7 @@ import nodemailer from "nodemailer";
     else if(req.query.type!="check"||!req.query.type){
         Cashfree.XClientId = process.env.CASHFREE_API_ID;
         Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY;
-        Cashfree.XEnvironment = Cashfree.Environment.TEST;
+        Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
         console.log(req.query.order_id);
         
         try {
