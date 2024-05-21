@@ -19,7 +19,7 @@ import nodemailer from "nodemailer";
             console.log(orderdata.payment_status);
             if(orderdata.payment_status=="SUCCESS"){
              let a  = await InternUser.findByIdAndUpdate({_id:req.query.id},{orderid:orderdata.order_id,paymentid:orderdata.payment_gateway_details.gateway_payment_id,amount:orderdata.order_amount,paymentstatus:"Paid",status:"Registered"});
-             //try sending email
+            
              try{
                
         const transporter = await nodemailer.createTransport({
