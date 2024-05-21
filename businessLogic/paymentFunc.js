@@ -68,7 +68,7 @@ const handlePrePayment = async (req, res) => {
 const handlePayment = async (req, res) => {
   Cashfree.XClientId = process.env.CASHFREE_API_ID;
 Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY;
-Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+Cashfree.XEnvironment = Cashfree.Environment.TEST;
 
   const orderid = Math.floor(Math.random()*1000)+req.body.id.toString()+"DIO";
   let a  = await InternUser.findOneAndUpdate({_id:req.body.id},{orderid:orderid});
