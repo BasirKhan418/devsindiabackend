@@ -9,7 +9,7 @@ import nodemailer from "nodemailer";
     if(req.query.type=="check"){
         Cashfree.XClientId = process.env.CASHFREE_API_ID;
         Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY;
-        Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+        Cashfree.XEnvironment = Cashfree.Environment.TEST;
         console.log(req.query.order_id);
         
         try {
@@ -85,14 +85,14 @@ import nodemailer from "nodemailer";
             return res.status(400).json({success:false,message:"Payment Failed"});
            
         } catch (error) {
-            console.error('Error setting up order request:', error.response.data);
+            console.error('Error setting up order request:');
             return res.status(400).json({success:false,message:"Payment Failed"});
         }
     }
     else if(req.query.type!="check"||!req.query.type){
         Cashfree.XClientId = process.env.CASHFREE_API_ID;
         Cashfree.XClientSecret = process.env.CASHFREE_SECRET_KEY;
-        Cashfree.XEnvironment = Cashfree.Environment.PRODUCTION;
+        Cashfree.XEnvironment = Cashfree.Environment.TEST;
         console.log(req.query.order_id);
         
         try {
@@ -170,7 +170,7 @@ import nodemailer from "nodemailer";
             return res.redirect(302, `${process.env.PUBLIC_HOST}/payment/failed?id=${req.query.id}`);
            
         } catch (error) {
-            console.error('Error setting up order request:', error.response.data);
+            console.error('Error setting up order request:');
             return res.redirect(302, `${process.env.PUBLIC_HOST}/payment/failed?id=${req.query.id}`);
         }
     }
