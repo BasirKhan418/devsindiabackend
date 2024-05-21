@@ -26,7 +26,12 @@ import sendComplerionC from './routes/sendComplerionC.js';
 import cashfreepaymentroute from './routes/cashfreepaymentroute.js';
 import verify from './routes/verify.js';
 server.use(express.json());
-server.use(cors());
+server.use(cors({
+    origin: 'https://devsindia.in', // Replace with your client origin
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization'
+  }));
+// server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 server.listen(8080,()=>{
     console.log('Server is running on port 8080 http://localhost:8080/');
