@@ -14,10 +14,17 @@ import nodemailer from "nodemailer";
         
         try {
             const response = await Cashfree.PGOrderFetchPayments("2023-08-01", req.query.order_id);
+            console.log(response.data);
+            console.log("on top response data");
             var orderdata = response.data[0];
-            if(response.data!=null){
+            console.log("on below orderdata after response.data[0]");
+            console.log(orderdata)
             console.log(orderdata.payment_status);
+            console.log("on top payment satatus");
+            if(response.data!=null){
+           console.log("inside if response.data!=null")
             if(orderdata.payment_status=="SUCCESS"){
+              console.log("under payment status success page")
              let a  = await InternUser.findByIdAndUpdate({_id:req.query.id},{orderid:orderdata.order_id,paymentid:orderdata.payment_gateway_details.gateway_payment_id,amount:orderdata.order_amount,paymentstatus:"Paid",status:"Registered"});
             
              try{
@@ -86,6 +93,7 @@ import nodemailer from "nodemailer";
            
         } catch (error) {
             console.error('Error setting up order request:');
+            console.log(error);
             return res.status(400).json({success:false,message:"Payment Failed"});
         }
     }
