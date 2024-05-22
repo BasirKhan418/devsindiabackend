@@ -25,6 +25,8 @@ import sendofferlet from './routes/sendofferlet.js';
 import sendComplerionC from './routes/sendComplerionC.js';
 import cashfreepaymentroute from './routes/cashfreepaymentroute.js';
 import verify from './routes/verify.js';
+import statusroute from './routes/statusroute.js';
+import getuserbyemail from './routes/getuserbyemail.js';
 server.use(express.json());
 // server.use(cors({
 //     origin: 'https://devsindia.in', // Replace with your client origin
@@ -68,3 +70,5 @@ server.use("/api/offerletter",sendofferlet.router);
 server.use("/api/cc",sendComplerionC.router);
 server.use("/api/verify",verify.router);
 server.use("/api/intiatePayment",cashfreepaymentroute.router);
+server.use("/api/status",statusroute.router);
+server.use("/api/user",getuserbyemail.router);
