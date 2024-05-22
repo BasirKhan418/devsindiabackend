@@ -25,7 +25,7 @@ import nodemailer from "nodemailer";
            console.log("inside if response.data!=null")
             if(orderdata.payment_status=="SUCCESS"){
               console.log("under payment status success page")
-             let a  = await InternUser.findByIdAndUpdate({_id:req.query.id},{orderid:orderdata.order_id,paymentid:orderdata.payment_gateway_details.gateway_payment_id,amount:orderdata.order_amount,paymentstatus:"Paid",status:"Registered"});
+             let a  = await InternUser.findByIdAndUpdate({_id:req.query.id},{orderid:orderdata.order_id,paymentid:orderdata.cf_payment_id,amount:orderdata.order_amount,paymentstatus:"Paid",status:"Registered"});
             
              try{
                
