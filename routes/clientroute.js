@@ -1,13 +1,21 @@
 import express from "express";
 import multer from 'multer';
 import path from 'path'; // Import the path module
+import fs from 'fs'; // Import the File System module
 const router = express.Router();
 import Clients from "../models/Clients.js";
 import nodemailer from 'nodemailer';
 
+const uploadDir = './uploads';
+
+// Ensure the uploads directory exists
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads'); // Make sure this path is correct
+    cb(null, uploadDir); // Use the correct path to the uploads folder
   },
   filename: function (req, file, cb) {
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
@@ -15,8 +23,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-
-
 router.get("/", async(req, res) => {
   try{
     const clients = await Clients.find();
