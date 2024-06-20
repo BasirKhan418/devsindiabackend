@@ -27,6 +27,8 @@ import cashfreepaymentroute from './routes/cashfreepaymentroute.js';
 import verify from './routes/verify.js';
 import statusroute from './routes/statusroute.js';
 import getuserbyemail from './routes/getuserbyemail.js';
+import razorpay from './routes/razorpay.js';
+import PaymentSwitch from './routes/PaymentSwitch.js';
 server.use(express.json());
 // server.use(cors({
 //     origin: 'https://devsindia.in', // Replace with your client origin
@@ -72,3 +74,5 @@ server.use("/api/verify",verify.router);
 server.use("/api/intiatePayment",cashfreepaymentroute.router);
 server.use("/api/status",statusroute.router);
 server.use("/api/user",getuserbyemail.router);
+server.use("/api/razorpay",razorpay.router);
+server.use("/api/switch",PaymentSwitch.router);
