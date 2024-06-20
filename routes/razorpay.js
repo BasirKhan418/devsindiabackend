@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import Razorpay from 'razorpay';
-import InternUser from '../models/internUser.js';
+import InternUser from '../models/InternUser.js';
 import * as crypto from "crypto"
 import nodemailer from "nodemailer";
 router.get("/",(req,res)=>{
