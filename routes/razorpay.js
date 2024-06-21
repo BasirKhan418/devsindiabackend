@@ -21,7 +21,7 @@ router.post("/pre",async(req,res)=>{
     console.log(req.body);
     try{
     instance.orders.create(options, async function(err, order) {
-      let dt = await InternUser.findByIdAndUpdate({_id:req.body.id},{orderid:order.id})
+      let dt = await InternUser.findByIdAndUpdate({_id:req.body.id},{orderid:order.id,amount:req.body.amount})
       res.json({order:order,success:true});
     })}
     catch(err){
