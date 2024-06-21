@@ -9,5 +9,10 @@ grouplink:{type:String,required:true},
 seats:{type:Number,required:true},
 duration:{type:String,required:true},
 testid:{type:String,required:true},
+isopen:{type:Boolean},
+discount:{type:Number},
+feature:{type:String},
+ytvideo:{type:String},
+startdate:{type:String},
 },{timestamps:true});
 export default mongoose.model('InternDetails',InternSchema);

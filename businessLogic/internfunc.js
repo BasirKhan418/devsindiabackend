@@ -4,7 +4,7 @@ const handleAllInternshipDetails = async (req, res) => {
     console.log('Inside handleAllInternshipDetails');
     try{
         
-     const {title,desc,img,price,skills,seats,duration,grouplink,testid} = req.body;
+     const {title,desc,img,price,skills,seats,duration,grouplink,testid,isopen,discount,feature,ytvideo,startdate} = req.body;
      const data = new InternDetails({
             title,
             desc,
@@ -14,7 +14,12 @@ const handleAllInternshipDetails = async (req, res) => {
             seats,
             duration,
             grouplink,
-            testid
+            testid,
+            isopen,
+            discount,
+            feature,
+            ytvideo,
+            startdate
         });
         await data.save();
         res.status(200).json({success:true,message:"Internship details saved successfully"});

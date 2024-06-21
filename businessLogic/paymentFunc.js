@@ -45,7 +45,7 @@ const handlePrePayment = async (req, res) => {
             internid:internid,
             amount:indata.price,
             paymentstatus:"pending",
-            teststatus:"pending"
+            teststatus:"pending",
         });
         await data.save();
         let data1 = await InternUser.populate(data,{path:"Regdomain"});
