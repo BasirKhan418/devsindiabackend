@@ -19,6 +19,7 @@ let coupon = new Coupon({
     cpnlimit:req.body.cpnlimit,
     cpnused:req.body.cpnused,
     cpnpercentage:req.body.cpnpercentage,
+    cpnapplicable:req.body.cpnapplicable
 });
 let data = await coupon.save();
 res.status(200).json({data,success:true,message:"Coupon Added Successfully"});
@@ -27,6 +28,15 @@ res.status(200).json({data,success:true,message:"Coupon Added Successfully"});
 else if(req.body.status=="validate"){
     //check if coupon exists
 let data = await Coupon.findOne({cpncode:req.body.cpncode});
+if(!data){
+    res.status(200).json({data,success:false,message:"Coupon Not Found!. Please Enter a Valid Coupon Code"});
+    return;
+}
+let findres = data.cpnapplicable.some((item)=>item==req.body.clmid)
+if(!findres){
+    res.status(200).json({data,success:false,message:"Coupon Not Applicable for this Course!"});
+    return;
+}
 //generate random number
 
 
@@ -77,6 +87,7 @@ let data = await Coupon.findOneAndUpdate({_id:req.body.id},{
     cpnlimit:req.body.cpnlimit,
     cpnused:req.body.cpnused,
     cpnpercentage:req.body.cpnpercentage,
+    cpnapplicable:req.body.cpnapplicable
 });
 res.status(200).json({data,success:true,message:"Coupon Updated Successfully"});
 
