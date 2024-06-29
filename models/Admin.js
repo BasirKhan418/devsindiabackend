@@ -15,6 +15,13 @@ const adminSchema = new mongoose.Schema({
   phone:{
     type:Number,
     required:true
+  },
+  type:{
+    type:String,
+    required:true
+  },
+  token:{
+    type:String,
   }
 },{timestamps:true}); // collection
 export default mongoose.model("Admin", adminSchema);
