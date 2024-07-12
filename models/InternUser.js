@@ -24,6 +24,10 @@ const InternUserSchema = new mongoose.Schema({
     startdate: { type: String },
     enddate: { type: String },
     progress:{type:Number,default:0},
+    crcmp: {
+        type: [Object],
+        default: []
+      },//crcmp stands for course complete
     rank: { type: String },
     teststatus: { type: String, default: 'pending' },
     question1answer: [{ type: Object, default: '' }],

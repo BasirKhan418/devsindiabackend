@@ -1,27 +1,27 @@
 import mongoose from "mongoose";
-const adminSchema = new mongoose.Schema({
-  name: {
+const AssignmentSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true,
   },
-  email: {
+  desc: {
     type: String,
     required: true,
   },
-  password: {
+  link: {
     type: String,
     required: true,
-  },
-  phone:{
-    type:Number,
-    required:true
   },
   type:{
     type:String,
     required:true
   },
-  token:{
+  duedate:{
+    type:String,
+    required:true
+  },
+  crid:{
     type:String,
   }
 },{timestamps:true}); // collection
-export default mongoose.models.Admin || mongoose.model("Admin",adminSchema);
+export default mongoose.models.Assignments || mongoose.model("Assignments",AssignmentSchema);
