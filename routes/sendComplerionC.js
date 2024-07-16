@@ -52,7 +52,7 @@ try{
                   <strong>SAKHSHI SINGH</strong><br>
                   HR Manager<br>
                   DevsIndia.in<br>
-                  founder.devsindiaorg@gmail.com
+                  shakhshi@devsindia.in
               </p>
           </div>
           <div style="background-color: #f4f4f4; padding: 20px; text-align: center;">

@@ -76,7 +76,7 @@ router.post("/", upload.single('file'), async(req, res) => {
           <div style="margin-bottom: 20px;">
               <h2 style="color: #333; margin-bottom: 10px;">Thank you for your application!</h2>
               <p style="color: #666; margin-bottom: 10px;">We have received your application and will review it as soon as possible. Please allow us some business days to process your request.</p>
-              <p style="color: #666; margin-bottom: 10px;">If you have any urgent inquiries, feel free to contact us at <a href="mailto:founder.devsindiaorg@gmail.com" style="color: #007bff; text-decoration: underline;">founder.devsindiaorg@gmail.com</a>.</p>
+              <p style="color: #666; margin-bottom: 10px;">If you have any urgent inquiries, feel free to contact us at <a href="mailto:enquiry@devsindia.in" style="color: #007bff; text-decoration: underline;">enquiry@devsindia.in</a>.</p>
           </div>
           <div style="text-align: center;">
               <a href=${process.env.PUBLIC_HOST} target="_blank" style="background-color: #007bff; color: #fff; text-decoration: none; display: inline-block; padding: 10px 20px; border-radius: 5px;">Visit Our Website</a>

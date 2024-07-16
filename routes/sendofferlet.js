@@ -42,7 +42,7 @@ try{
               <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">Congratulations! We are pleased to offer you the position of ${data.Regdomain.title} at DevsIndia. We believe that your skills and experience will make a valuable contribution to our team.</p>
               <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">This internship will begin on ${data.startdate} and end on ${data.enddate}. During this time, you will have the opportunity to work on exciting projects and learn from experienced professionals in the field.</p>
               <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">Please review the attached offer letter for more details on your compensation, responsibilities, and other important information.</p>
-              <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">If you have any questions or concerns, feel free to contact us at founder.devsindiaorg@gmail.com .</p>
+              <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">If you have any questions or concerns, feel free to contact us at hr@devsindia.in or support@devsindia.in .</p>
               <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">We look forward to welcoming you to the DevsIndia team!</p>
               <p style="color: #666666; margin-top: 5px; margin-bottom: 15px;">Best regards,<br> SAKHSHI SINGH<br> HR Manager <br> DevsIndia</p>
             </td>

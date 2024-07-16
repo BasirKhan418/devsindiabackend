@@ -66,7 +66,7 @@ import nodemailer from "nodemailer";
          </ul>
          <p>Your payment has been processed successfully.</p>
          <p>We are thrilled to have you join us and look forward to your contributions. Please join the group as it is mandatory step to do.</p>
-         <p>If you have any questions or need assistance, feel free to contact us at <a href="mailto:founder.devsindiaorg@gmail.com" style="color: #007bff; text-decoration: none;">founder.devsindiaorg@gmail.com</a>.</p>
+         <p>If you have any questions or need assistance, feel free to contact us at <a href="mailto:support@devsindia.in" style="color: #007bff; text-decoration: none;">support@devsindia.in</a>.</p>
          <p style="margin-bottom: 0;">Best regards,<br>Team DevsIndiaOrg</p>
        </div>
        <div style="text-align: center; background-color: #ADD8E6; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
@@ -151,7 +151,7 @@ import nodemailer from "nodemailer";
          </ul>
          <p>Your payment has been processed successfully.</p>
          <p>We are thrilled to have you join us and look forward to your contributions. Please join the group as it is mandatory step to do.</p>
-         <p>If you have any questions or need assistance, feel free to contact us at <a href="mailto:founder.devsindiaorg@gmail.com" style="color: #007bff; text-decoration: none;">founder.devsindiaorg@gmail.com</a>.</p>
+         <p>If you have any questions or need assistance, feel free to contact us at <a href="mailto:support@devsindia.in" style="color: #007bff; text-decoration: none;">support@devsindia.in</a>.</p>
          <p style="margin-bottom: 0;">Best regards,<br>Team DevsIndiaOrg</p>
        </div>
        <div style="text-align: center; background-color: #ADD8E6; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
