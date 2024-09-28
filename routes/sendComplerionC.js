@@ -11,7 +11,7 @@ try{
    let a  = await InternUser.findByIdAndUpdate({_id:req.body.id},{ccurl:req.body.url,status:"Completed"});
    let data = await InternUser.findOne({_id:req.body.id});
    const transporter = await nodemailer.createTransport({
-      host: "smtp-relay.brevo.com",
+      host: "smtp.gmail.com",
       port: 587,
       secure: false,
       auth: {
@@ -29,7 +29,7 @@ try{
       <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
       <div style="max-width: 600px; margin: 20px auto; background-color: #ffffff; border: 1px solid #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
           <div style="background-color: #4A3AFF; padding: 20px; text-align: center;">
-              <img src="https://res.cloudinary.com/dst73auvn/image/upload/v1716116459/Di_logo_bluebg_lc4snb.gif" alt="DevsIndia Logo" style="max-width: 150px; margin-bottom: 20px;">
+              <img src="https://d1vamwx4eg4oha.cloudfront.net/diassets/logo.png" alt="DevsIndia Logo" style="max-width: 150px; margin-bottom: 20px;">
           </div>
           <div style="padding: 20px; text-align: left;">
               <p style="font-size: 16px; color: #333333; margin: 0;">Dear <strong>${data.name}</strong>,</p>

@@ -11,7 +11,7 @@ try{
     let a = await InternUser.findOne({_id:req.body.id});
     let data  = await InternUser.populate(a,{path:"Regdomain"});
     const transporter = await nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {
@@ -32,7 +32,7 @@ try{
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tr>
             <td style="text-align: center; margin-bottom: 20px;">
-              <img src="https://res.cloudinary.com/dst73auvn/image/upload/v1714112756/logogif_slfyto.gif" alt="DevsIndia Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+              <img src="https://d1vamwx4eg4oha.cloudfront.net/diassets/logo.png" alt="DevsIndia Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
               <h1 style="color: #333333;">Internship Offer Letter</h1>
             </td>
           </tr>

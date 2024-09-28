@@ -62,7 +62,7 @@ router.post("/post",async(req,res)=>{
     let dt = await InternUser.findOneAndUpdate({orderid:razorpay_order_id},{paymentid:razorpay_payment_id,paymentstatus:"Paid",status:"Registered"})
     try{
       const transporter = await nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {

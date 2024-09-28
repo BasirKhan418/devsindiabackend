@@ -7,7 +7,7 @@ res.send("Hello World");
 router.post('/',async (req,res)=>{
     console.log(req.body);
     const transporter = await nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {

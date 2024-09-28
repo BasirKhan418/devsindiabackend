@@ -9,7 +9,7 @@ router.post('/', async(req, res) => {
     let rand  ="#"+ Math.floor(Math.random()*100000)+"DIO";
 
     const transporter = await nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
+        host: "smtp.gmail.com",
         port: 587,
         secure: false,
         auth: {
